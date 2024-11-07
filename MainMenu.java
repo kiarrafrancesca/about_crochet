@@ -1,4 +1,4 @@
-import java.io.IOException;
+import java.util.InputMismatchException;
 import java.util.Scanner;
 import user.User;
 
@@ -19,7 +19,16 @@ public class MainMenu {
             System.out.println("| 3. Exit              |");
             System.out.println("<---------------------->");
             System.out.print(" Enter your choice: ");
-            int choice = input.nextInt();
+            int choice = 0;
+
+            try {
+                choice = input.nextInt();
+            }
+            catch (InputMismatchException e) {
+                System.out.println("Please enter a valid choice from the menu.");
+                input.next();
+                continue;
+            }
 
             switch(choice) {
                 case 1:
@@ -35,23 +44,8 @@ public class MainMenu {
                 default:
                     System.out.println("Please enter a valid choice from the menu.");
             }
-            input.close();
+            input.nextLine();
         }
+        input.close();
     }
-
-    public void clearScreen() {
-        try {
-            if (System.getProperty("os.name").contains("Windows")) {
-                new ProcessBuilder("cmd", "/c", "cls").inheritIO().start().waitFor();
-            }
-            else {
-                System.out.print("\033[H\033[2J");
-                System.out.flush();
-            }
-        }
-        catch (IOException | InterruptedException ex) {
-            ex.printStackTrace();
-        }
-    }
-
 }
