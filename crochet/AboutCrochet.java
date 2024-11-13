@@ -9,9 +9,13 @@ public class AboutCrochet {
     private List<Tool> tools;
     private List<Yarn> yarns;
     private List<Stitch> stitches;
+    private List<Tips> tips;
 
     public AboutCrochet() {
+        this.tools = ToolInitializer.initializeTools();
+        this.yarns = YarnInitializer.initializeYarn();
         this.stitches = StitchInitializer.initializeStitches();
+        this.tips = TipsInitializer.initializeTips();
     }
 
     public void aboutCrochet() {
@@ -175,6 +179,39 @@ public class AboutCrochet {
     }
 
     public void tipsAndTricks() {
-        
+        System.out.println("===============================================================================");
+        System.out.println("                              Welcome to Tips & Tricks");
+        System.out.println("===============================================================================");
+        System.out.println("  1. Keep a Crochet Journal                 2. Practice Yarn Tension");
+        System.out.println("  3. Blocking Your Work                     4. Learn Foundation Stitches");
+        System.out.println("  5. Chain Loosely for Foundation Rows      6. Mind Your Edges");
+        System.out.println("  7. Use a Yarn Bowl                        8. Practice Frogging");
+        System.out.println("  9. Magic Circle                           10. Use Scraps for Smaller Projects");
+        System.out.println("  11. Master the Invisible Decrease         12. Changing of Colors");
+        System.out.println("-------------------------------------------------------------------------------");
+        System.out.println(" > Enter the number of the stitch you want to learn ('0' to exit): ");
+
+        int tipNumber = -1;
+
+        try {
+            tipNumber = input.nextInt();
+        }
+        catch (InputMismatchException e) {
+            System.out.println("Please enter a valid choice from the list.");
+            input.next();
+            return;
+        }
+
+        if (tipNumber == 0) {
+            return;
+        }
+        else if (tipNumber >= 1 && tipNumber <= 12) {
+            Tips tips = tips.get(tipNumber - 1);
+            System.out.println("Tip Name: " + tips.getName());
+            System.out.println("Tip/Trick: " + tips.getTips());
+        }
+        else {
+            System.out.println("Please enter a valid choice from the list.");
+        }
     }
 }

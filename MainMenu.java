@@ -10,15 +10,15 @@ public class MainMenu {
         boolean exit = false;
 
         while (!exit) {
-            System.out.println("<---------------------->");
-            System.out.println("|       Main Menu      |");
-            System.out.println("+----------------------+");
-            System.out.println("| 1. Sign Up           |");
-            System.out.println("| 2. Log In            |");
-            System.out.println("+----------------------+");
-            System.out.println("| 3. Exit              |");
-            System.out.println("<---------------------->");
-            System.out.print(" Enter your choice: ");
+            System.out.println("***********************************");
+            System.out.println("|             Main Menu           |");
+            System.out.println("***********************************");
+            System.out.println("  1. Sign Up");
+            System.out.println("  2. Log In");
+            System.out.println("-----------------------------------");
+            System.out.println("  3. Exit");
+            System.out.println("***********************************");
+            System.out.println("  > Enter your choice (1-3): ");
             int choice = 0;
 
             try {

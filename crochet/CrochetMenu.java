@@ -14,17 +14,17 @@ public class CrochetMenu {
         boolean exit = false;
 
         while (!exit) {
-            System.out.println("<------------------------->");
-            System.out.println("|       Crochet Menu      |");
-            System.out.println("+-------------------------+");
-            System.out.println("| 1. User Menu            |");
-            System.out.println("| 2. About Crochet        |");
-            System.out.println("| 3. Suggester            |");
-            System.out.println("| 4. Pattern              |");
-            System.out.println("+-------------------------+");
-            System.out.println("| 5. Log Out              |");
-            System.out.println("<------------------------->");
-            System.out.println("Enter your choice: ");
+            System.out.println("***********************************");
+            System.out.println("|          Crochet Menu           |");
+            System.out.println("***********************************");
+            System.out.println("  1. User Menu");
+            System.out.println("  2. About Crochet");
+            System.out.println("  3. Suggester");
+            System.out.println("  4. Pattern");
+            System.out.println("-----------------------------------");
+            System.out.println("  5. Log Out");
+            System.out.println("***********************************");
+            System.out.println("  > Enter your choice (1-5): ");
             int choice = 0;
 
             try {
